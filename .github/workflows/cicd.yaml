@@ -49,51 +49,12 @@ jobs:
         with: 
           payload: |
             {
-              "text": "test"
-              "blocks": [
+              "blocks":[
                 {
                   "type": "header",
                   "text": {
-                    "type": "plain_text",
-                    "text": "CICD Submission"
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Name:* Test"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Email:* test"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Matricultaion:* abc122"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository:*\n <https://www.google.com>"
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "<https://www.google.com>"
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "Go",
-                      "emoji": true
-                    },
-                    "url": "https://google.com",
-                    "action_id": "button-action"
+                    "type": "plain-text",
+                    "test": "CICD Assignment"
                   }
                 }
               ]
