@@ -5,6 +5,11 @@ on:
     branches:
       - 'release/v*.*'
 
+env:
+  NAME: MYAT THIHA NAING
+  EMAIL: e112943@u.nus.edu
+  REPO: git@github.com:MyatThihaNaing-mthn/CICD-Assignment.git
+
 #this line is added just to test my commit message
 #whats going on
 jobs:
@@ -13,12 +18,11 @@ jobs:
     if: startsWith(github.event.head_commit.message, '#norun') != true
     runs-on: ubuntu-latest
     steps:
-
+    
 
       - name: Print my name
-        run: echo "$NAME"
-        env: 
-          NAME: ${{env.NAME}}
+        run: echo "$NAME $EMAIL $REPO"
+        
 
 
 
