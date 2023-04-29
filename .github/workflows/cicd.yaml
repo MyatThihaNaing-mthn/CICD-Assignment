@@ -9,7 +9,7 @@ env:
   NAME: MYAT THIHA NAING
   EMAIL: e112943@u.nus.edu
   REPO: git@github.com:MyatThihaNaing-mthn/CICD-Assignment.git
-  METRIC: A0269560W
+  MATRIC: A0269560W
 
 #this line is added just to test my commit message
 #whats going on
@@ -48,61 +48,65 @@ jobs:
         uses: slackapi/slack-github-action@v1.23.0
         with: 
           payload: |
-            [
-              {
-                "type": "header",
-                "text": 
+            {
+              "blocks":
+                [
                   {
-                    "type": "plain-text",
-                    "text": "CICD Submission"
-                  }
-              },
-              {
-                "type": "section"
-                "fields":
-                  [
+                    "type": "header",
+                  "text":
                     {
-                      "type": "mrkdwn",
-                      "text": "*Name:* $NAME"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Email:* $EMAIL"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Matriculation:* $METRIC"
+                      "type": "plain-text",
+                      "text": "SA56 CICD Submission"
                     }
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository:*\n <$REPO>"
-                    }
-                  ]
-              }
-              ,
-              {
-                "type": "section"
-                "text":
-                  {
-                    "type": "mrkdwn",
-                    "text": "<www.google.com>"
                   },
-                  "accessory":
-                    {
-                      "type": "button",
-                      "text":
+                  {
+                    "type": "section",
+                    "fields":
+                      [
                         {
-                          "type": "plain-text",
-                          "text": "GO",
-                          "emoji": true
+                          "type": "mrkdwn",
+                          "text": "*Name:* $NAME" 
                         },
-                        "url": "https://www.google.com",
-                        "action-id": "button-action"
-                    }
-              }
-            ]
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Email:* $EMAIL" 
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Matriculation:* $MATRIC" 
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Repository:*\n <$REPO>" 
+                        } 
+                      ]
+                  },
+                  {
+                    "type": "section",
+                    "text":
+                      {
+                        "type": "mrkdwn",
+                        "text": "<$APP_URL>"
+                      },
+                      "accessory":
+                        {
+                          "type": "button",
+                          "text":
+                            {
+                              "type": "plain-text",
+                              "text": "Go",
+                              "emoji": true
+                            },
+                            "url": "$APP_URL",
+                            "action-id": "button-action"
+                        }
+                  }
+                  
+                ]
+            }
         env:
           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+          APP_URL: ${{secrets.APP_URL}}
         if: always()
 
 
