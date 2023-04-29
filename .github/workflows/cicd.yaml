@@ -49,7 +49,7 @@ jobs:
         with: 
           payload: |
             {
-              "text": "$APP_URL"
+              "text":"${{secrets.APP_URL}}"
             }
         env:
           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
