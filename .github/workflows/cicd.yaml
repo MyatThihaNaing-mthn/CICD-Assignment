@@ -49,60 +49,7 @@ jobs:
         with: 
           payload: |
             {
-              "blocks":
-                [
-                  {
-                    "type": "header",
-                  "text":
-                    {
-                      "type": "plain-text",
-                      "text": "SA56 CICD Submission"
-                    }
-                  },
-                  {
-                    "type": "section",
-                    "fields":
-                      [
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Name:* $NAME" 
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Email:* $EMAIL" 
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Matriculation:* $MATRIC" 
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Repository:*\n <$REPO>" 
-                        } 
-                      ]
-                  },
-                  {
-                    "type": "section",
-                    "text":
-                      {
-                        "type": "mrkdwn",
-                        "text": "<$APP_URL>"
-                      },
-                      "accessory":
-                        {
-                          "type": "button",
-                          "text":
-                            {
-                              "type": "plain-text",
-                              "text": "Go",
-                              "emoji": true
-                            },
-                            "url": "$APP_URL",
-                            "action-id": "button-action"
-                        }
-                  }
-                  
-                ]
+              "text": "Test"
             }
         env:
           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
