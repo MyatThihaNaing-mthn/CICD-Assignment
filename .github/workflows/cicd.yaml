@@ -9,6 +9,7 @@ env:
   NAME: MYAT THIHA NAING
   EMAIL: e112943@u.nus.edu
   REPO: git@github.com:MyatThihaNaing-mthn/CICD-Assignment.git
+  METRIC: A0269560W
 
 #this line is added just to test my commit message
 #whats going on
@@ -42,13 +43,71 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{secrets.RAILWAY_TOKEN}}
       
-#      - name: Notify in the slack channel
-#        uses: rtCamp/action-slack-notify@v2
-#         env:
-#            SLACK_USERNAME: MYAT THIHA
-#            SLACK_TITLE: CA TESTING
-#            SLACK_MESSAGE: just for testing
-#            SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK}}
+      - name: Send message to slack
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
+        with: 
+          payload: |
+            [
+              {
+                "type": "header",
+                "text": 
+                  {
+                    "type": "plain-text",
+                    "text": "CICD Submission"
+                  }
+              },
+              {
+                "type": "section"
+                "fields":
+                  [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Name:* $NAME"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Email:* $EMAIL"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Matriculation:* $METRIC"
+                    }
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Repository:*\n <$REPO>"
+                    }
+                  ]
+              }
+              ,
+              {
+                "type": "section"
+                "text":
+                  {
+                    "type": "mrkdwn",
+                    "text": "<www.google.com>"
+                  },
+                  "accessory":
+                    {
+                      "type": "button",
+                      "text":
+                        {
+                          "type": "plain-text",
+                          "text": "GO",
+                          "emoji": true
+                        },
+                        "url": "https://www.google.com",
+                        "action-id": "button-action"
+                    }
+              }
+            ]
+        env:
+          SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+        if: always()
+
+
+
+
 
 
       
