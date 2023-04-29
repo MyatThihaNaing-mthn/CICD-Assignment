@@ -16,7 +16,16 @@ jobs:
         with:
           go-version: 'stable'
 
-      - run: go version
+      - name: Railway Installation
+        run: npm i -g @railway/cli
+
+      - name: Deploy Railway
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{secrets.RAILWAY_TOCKEN}}
+
+      
+        
 
 
 
