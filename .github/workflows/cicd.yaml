@@ -16,7 +16,9 @@ jobs:
 
 
       - name: Print my name
-        run: echo ${{env.NAME}}
+        run: |
+          echo "${NAME}""
+
 
 
       - name: Check out code
