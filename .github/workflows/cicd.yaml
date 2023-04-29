@@ -49,30 +49,54 @@ jobs:
         with: 
           payload: |
             {
-              "text": "Submission",
               "blocks": [
                 {
                   "type": "header",
                   "text": {
                     "type": "plain_text",
                     "text": "CICD Submission"
-                      },
-                  {
-                    "type": "section",
-                    "fields": [
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Name:*"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Email:*"
-                        }
-                      
-                    ]
                   }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Name:* Test"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Email:* test"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Matricultaion:* abc122"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Repository:*\n <https://www.google.com>"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<https://www.google.com>"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "Go",
+                      "emoji": true
+                    },
+                    "url": "https://google.com",
+                    "action_id": "button-action"
+                  }
+                }
+            }  ]
 
-            }
         env:
           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
           APP_URL: ${{secrets.APP_URL}}
