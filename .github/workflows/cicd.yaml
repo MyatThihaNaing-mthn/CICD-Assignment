@@ -16,7 +16,8 @@ jobs:
 
 
       - name: Print my name
-        run: echo "$myName, $myMail, $myRepo, $myMetri "
+        run: echo $env.NAME
+              echo $env.myMail
         env:
           myName: ${{env.NAME}}
           myMail: ${{env.EMAIL}}
