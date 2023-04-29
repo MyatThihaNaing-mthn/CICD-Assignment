@@ -50,22 +50,28 @@ jobs:
           payload: |
             {
               "text": "Submission",
-              "blocks":
-                        [
-                          {
-                            "type": "header",
-                            "text":
-                                  {
-                                    "type": "plain-text",
-                                    "text": "CICD Submission"
-                                  }
-                          },
-                          {
-                            "type": "section",
-                            "text": "*Name:* $NAME"
-                          }
-                          
-                        ]
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "CICD Submission"
+                      },
+                  {
+                    "type": "section",
+                    "fields": [
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Name:*"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Email:*"
+                        }
+                      
+                    ]
+                  }
+
             }
         env:
           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
