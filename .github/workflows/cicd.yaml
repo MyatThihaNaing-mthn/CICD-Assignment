@@ -49,6 +49,7 @@ jobs:
         with: 
           payload: |
             {
+              "text": "test"
               "blocks": [
                 {
                   "type": "header",
