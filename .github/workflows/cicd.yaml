@@ -1,6 +1,10 @@
 name: CA for CICD
 
-on: push
+on:
+  push:
+      branches:
+        -'release/v*.*'
+
 
 jobs:
   build:
@@ -13,7 +17,7 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: 'stable'
-          
+
       - run: go version
 
 
