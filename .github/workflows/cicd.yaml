@@ -1,7 +1,9 @@
 name: CA for CICD
 
 on:
-  push
+  push:
+    branches:
+      - 'release/v*.*'
 
 
 jobs:
@@ -26,7 +28,6 @@ jobs:
 
       
         
-
 
 
 
