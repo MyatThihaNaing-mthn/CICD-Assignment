@@ -49,7 +49,26 @@ jobs:
         with: 
           payload: |
             {
-              "text":"${{secrets.APP_URL}}"
+              "blocks":
+                        [
+                          {
+                            "type": "header",
+                            "text":
+                                  {
+                                    "type": "plain-text",
+                                    "text": "CICD Submission"
+                                  }
+                          },
+                          {
+                            "type": "section",
+                            "fields":
+                                    [
+                                      "type": "mrkdwn",
+                                      "text": "*Name:* $NAME"
+                                    ]
+                          }
+                          
+                        ]
             }
         env:
           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
