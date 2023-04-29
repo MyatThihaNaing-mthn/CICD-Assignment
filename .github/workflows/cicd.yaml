@@ -6,8 +6,7 @@ on:
       - 'release/v*.*'
 
 #this line is added just to test my commit message
-#changes are made 
-#Now, this is show time
+#whats going on
 jobs:
   build:
     
