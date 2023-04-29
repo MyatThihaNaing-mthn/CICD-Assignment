@@ -58,14 +58,6 @@ jobs:
                                     "type": "plain-text",
                                     "text": "CICD Submission"
                                   }
-                          },
-                          {
-                            "type": "section",
-                            "fields":
-                                    [
-                                      "type": "mrkdwn",
-                                      "text": "*Name:* $NAME"
-                                    ]
                           }
                           
                         ]
