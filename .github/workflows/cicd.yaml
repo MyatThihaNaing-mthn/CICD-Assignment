@@ -1,6 +1,5 @@
 name: CA for CICD
-env:
-  NAME: 'MYAT THIHA NAING'
+
 on:
   push:
     branches:
@@ -14,7 +13,12 @@ jobs:
 
 
       - name: Print my name
-        run: echo "I AM $NAME"
+        run: echo "$myName, $myMail, $myRepo, $myMetri "
+        env:
+          myName: ${{secrets.NAME}}
+          myMail: ${{secrets.EMAIL}}
+          myRepo: ${{secrets.REPO}}
+          myMetri: ${{secrets.METRI}}
 
 
       - name: Check out code
