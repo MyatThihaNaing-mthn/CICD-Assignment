@@ -59,6 +59,10 @@ jobs:
                                     "type": "plain-text",
                                     "text": "CICD Submission"
                                   }
+                          },
+                          {
+                            "type": "section",
+                            "text": "*Name:* $NAME"
                           }
                           
                         ]
