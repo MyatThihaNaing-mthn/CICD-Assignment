@@ -18,10 +18,10 @@ jobs:
       - name: Print my name
         run: echo "$myName, $myMail, $myRepo, $myMetri "
         env:
-          myName: ${{secrets.NAME}}
-          myMail: ${{secrets.EMAIL}}
-          myRepo: ${{secrets.REPO}}
-          myMetri: ${{secrets.METRI}}
+          myName: ${{env.NAME}}
+          myMail: ${{env.EMAIL}}
+          myRepo: ${{env.REPO}}
+          myMetri: ${{env.METRIC}}
 
 
       - name: Check out code
