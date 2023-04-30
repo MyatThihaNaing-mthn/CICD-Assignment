@@ -47,10 +47,11 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
-          channel_id : 'C05552HCNRY' 
+          channel-id : 'C05552HCNRY' 
           payload: |
             
             {
+              "text": "Testing",
               "blocks": [
               {
                 "type": "header",
