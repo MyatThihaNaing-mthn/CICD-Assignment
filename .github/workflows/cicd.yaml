@@ -49,7 +49,7 @@ jobs:
         with:
           channel_id : 'C05552HCNRY' 
           payload: |
-            {
+            
             {
               "blocks": [
               {
@@ -100,7 +100,7 @@ jobs:
               }
                 ]
             }
-            }
+            
             
 
         env:
