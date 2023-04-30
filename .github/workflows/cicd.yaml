@@ -51,16 +51,14 @@ jobs:
           payload: |
             
             {
-
-              "blocks": 
-              [
+              "text": "Test Header",
+              "blocks": [
                 {
-                  "type": "header",
+                  "type": "section",
                   "text": {
-                    "type": "plain_text",
-                    "text": "CICD Submission",
-                    "emoji": true
-                    }
+                    "type": "mrkdwn",
+                    "text": "inside"
+                  }
                 }
               ]
             }
