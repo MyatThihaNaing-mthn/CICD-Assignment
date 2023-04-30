@@ -50,6 +50,7 @@ jobs:
           channel_id : 'C05552HCNRY' 
           payload: |
             {
+              "text": "Submission",
               "blocks": [
               {
                 "type": "header",
