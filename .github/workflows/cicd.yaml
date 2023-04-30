@@ -48,7 +48,7 @@ jobs:
         uses: slackapi/slack-github-action@v1.23.0
         with: 
           payload: |
-            { "blocks":
+            { block:
               [{ "type": "section", "text": 
                     { "type": "mrkdwn", "text": "test"}, "accessory": 
                     { "type": "button", "text": 
