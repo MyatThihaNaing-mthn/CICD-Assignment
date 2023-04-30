@@ -50,13 +50,13 @@ jobs:
           channel_id : 'C05552HCNRY' 
           payload: |
             {
-              "text": "Submission",
               "blocks": [
               {
                 "type": "header",
                 "text": {
                   "type": "plain_text",
-                  "text": "CICD Submission"
+                  "text": "CICD Submission",
+                  "emoji": true
                 }
               },
               {
@@ -97,7 +97,7 @@ jobs:
                   "action_id": "button-action"
                 }
               }
-            ]
+                ]
             }
             
 
