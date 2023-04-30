@@ -48,20 +48,48 @@ jobs:
         uses: slackapi/slack-github-action@v1.23.0
         with: 
           payload: |
-            {
-              "blocks":[
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain-text",
-                    "text": "CICD Assignment"
+            [
+              {
+                "type": "header",
+                "text": {
+                "type": "plain_text",
+                "text": "Test"
+              }
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Name:*\nTest"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Email:* test>"
                   }
-                },
+                ]
+              },
+            {
+              "type": "section",
+              "fields":
+                [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Matriculation:* test"
+                  }
+                ]
+            },
+            {
+              "type": "section",
+              "text": 
                 {
-
+                  "type": "mrkdwn",
+                  "text": "Test"
                 }
-              ]
             }
+            ]
+
+            
 
         env:
           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
