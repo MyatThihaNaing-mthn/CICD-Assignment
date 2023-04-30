@@ -50,6 +50,7 @@ jobs:
           channel_id : 'C05552HCNRY' 
           payload: |
             {
+            {
               "blocks": [
               {
                 "type": "header",
@@ -98,6 +99,7 @@ jobs:
                 }
               }
                 ]
+            }
             }
             
 
