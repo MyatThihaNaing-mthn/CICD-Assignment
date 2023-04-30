@@ -45,13 +45,13 @@ jobs:
       
       - name: Send message to slack
         id: slack
-        uses: slackapi/slack-github-action@v1.23.0
+        uses: 8398a7/action-slack@v3
         with: 
-          payload: |
-            { { "type": "section", "text": 
+          custom_payload: |
+            { attachments: [{ "type": "section", "text": 
                     { "type": "mrkdwn", "text": "test"}, "accessory": 
                     { "type": "button", "text": 
-                        { "type": "plain_text", "text": "Go", "emoji": true }, "value": "https://snotty-rhythm-production.up.railway.app/", "action_id": "button-action"}}
+                        { "type": "plain_text", "text": "Go", "emoji": true }, "value": "https://snotty-rhythm-production.up.railway.app/", "action_id": "button-action"}}]
             }
 
             
