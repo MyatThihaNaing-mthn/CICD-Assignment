@@ -46,7 +46,8 @@ jobs:
       - name: Send message to slack
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
-        with: 
+        with:
+          channel_id : 'C05552HCNRY' 
           payload: |
             {
               "text": "GitHub Action build result",
