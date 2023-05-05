@@ -44,68 +44,31 @@ jobs:
           RAILWAY_TOKEN: ${{secrets.RAILWAY_TOKEN}}
       
       - name: Send message to slack
-        run: | 
-          curl -v \
-            -H "Content-Type: application/json" \
-            -X POST ${{secrets.SLACK_WEBHOOK_URL}} \
-            -d '{
-                  "blocks": [
-                    {
-                      "type": "header",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "CICD Submission"
-                      }
-                    },
-                    {
-                      "type": "section",
-                      "fields": [
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Name:* Test"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Email:* test"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Matricultaion:* abc122"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Repository:*\n <https://www.google.com>"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "section",
-                      "text": {
-                        "type": "mrkdwn",
-                        "text": "<test>"
-                      },
-                      "accessory": {
-                        "type": "button",
-                        "text": {
-                          "type": "plain_text",
-                          "text": "Go",
-                          "emoji": true
-                        },
-                        "url": "test",
-                        "action_id": "button-action"
-                      }
-                    }
-                  ]
-          }'
-
-
-        
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          channel-id : 'C05552HCNRY' 
+          payload: |
+            
+            {
+              "text": "Test Header",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "inside"
+                  }
+                }
+              ]
+            }
             
             
 
         env:
           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
-          APP_URL: ${{secrets.APP_URL}}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+          
         if: always()
 
 
