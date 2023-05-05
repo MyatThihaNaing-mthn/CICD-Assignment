@@ -45,7 +45,9 @@ jobs:
       
       - name: Send message to slack
         run: | 
-          curl -X POST ${{secrets.SLACK_WEBHOOK_URL}} \
+          curl -v \
+            -H "Content-Type: application/json" \
+            -X POST ${{secrets.SLACK_WEBHOOK_URL}} \
             -d '{
                   "blocks": [
                     {
