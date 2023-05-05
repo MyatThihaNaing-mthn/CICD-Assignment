@@ -13,7 +13,6 @@ env:
   APP_URL: https://snotty-rhythm-production.up.railway.app/
 
 #this line is added just to test my commit message
-#whats going on
 jobs:
   build:
     
