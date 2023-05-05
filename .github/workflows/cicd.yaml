@@ -51,16 +51,53 @@ jobs:
           payload: |
             
             {
-              "text": "Test Header",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "inside"
+                "blocks": [
+                  {
+                    "type": "header",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "CICD Submission"
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "fields": [
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Name:* Test"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Email:* test"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Matricultaion:* abc122"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Repository:*\n <https://www.google.com>"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "<https://snotty-rhythm-production.up.railway.app/>"
+                    },
+                    "accessory": {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "Go",
+                        "emoji": true
+                      },
+                      "url": "https://snotty-rhythm-production.up.railway.app/",
+                      "action_id": "button-action"
+                    }
                   }
-                }
-              ]
+                ]
             }
             
             
