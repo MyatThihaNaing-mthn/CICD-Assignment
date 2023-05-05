@@ -76,7 +76,7 @@ jobs:
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Repository:*\n <${ {REPO} }>""
+                        "text": "*Repository:*\n <test>""
                       }
                     ]
                   },
