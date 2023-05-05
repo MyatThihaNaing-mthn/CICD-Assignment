@@ -46,7 +46,55 @@ jobs:
       - name: Send message to slack
         run: | 
           curl -X POST ${{secrets.SLACK_WEBHOOK_URL}} \
-            -d '{"test" : "test"}'
+            -d '{
+                  "blocks": [
+                    {
+                      "type": "header",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "CICD Submission"
+                      }
+                    },
+                    {
+                      "type": "section",
+                      "fields": [
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Name:* Test"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Email:* test"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Matricultaion:* abc122"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Repository:*\n <https://www.google.com>"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": "<test>"
+                      },
+                      "accessory": {
+                        "type": "button",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Go",
+                          "emoji": true
+                        },
+                        "url": "test",
+                        "action_id": "button-action"
+                      }
+                    }
+                  ]
+          }'
 
 
         
