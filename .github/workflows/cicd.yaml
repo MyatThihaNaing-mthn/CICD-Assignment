@@ -44,24 +44,12 @@ jobs:
           RAILWAY_TOKEN: ${{secrets.RAILWAY_TOKEN}}
       
       - name: Send message to slack
-        id: slack
-        uses: slackapi/slack-github-action@v1.23.0
-        with:
-          channel-id : 'C05552HCNRY' 
-          payload: |
-            
-            {
-              "text": "Test Header",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "inside"
-                  }
-                }
-              ]
-            }
+        run: | 
+          curl -X POST $env.SLACK_WEBHOOK_URL \
+            -d {"test" : "test"}
+
+
+        
             
             
 
