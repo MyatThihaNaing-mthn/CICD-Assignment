@@ -10,6 +10,7 @@ env:
   EMAIL: e112943@u.nus.edu
   REPO: git@github.com:MyatThihaNaing-mthn/CICD-Assignment.git
   MATRIC: A0269560W
+  APP_URL: https://snotty-rhythm-production.up.railway.app/
 
 #this line is added just to test my commit message
 #whats going on
@@ -76,7 +77,7 @@ jobs:
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Repository:*\n <${{env.REPO}}>"
+                        "text": "*Repository:*\n ${{env.REPO}}"
                       }
                     ]
                   },
@@ -84,7 +85,7 @@ jobs:
                     "type": "section",
                     "text": {
                       "type": "mrkdwn",
-                      "text": "<https://snotty-rhythm-production.up.railway.app/>"
+                      "text": "${{env.APP_URL}}"
                     },
                     "accessory": {
                       "type": "button",
@@ -93,7 +94,7 @@ jobs:
                         "text": "Go",
                         "emoji": true
                       },
-                      "url": "https://snotty-rhythm-production.up.railway.app/",
+                      "url": "${{env.APP_URL}}",
                       "action_id": "button-action"
                     }
                   }
