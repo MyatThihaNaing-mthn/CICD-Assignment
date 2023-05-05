@@ -3,7 +3,7 @@ name: CA for CICD
 on:
   push:
     branches:
-      - 'release/v\\d\\.\\d'
+      - 'release/v\d\.\d'
 
 env:
   NAME: MYAT THIHA NAING
