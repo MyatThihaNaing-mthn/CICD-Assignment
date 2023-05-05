@@ -12,7 +12,7 @@ env:
   MATRIC: A0269560W
   APP_URL: https://snotty-rhythm-production.up.railway.app/
 
-#this line is added just to test my commit message
+#this line is added just to test my commit
 jobs:
   build:
     
