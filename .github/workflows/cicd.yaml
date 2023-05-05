@@ -22,7 +22,7 @@ jobs:
     
 
       - name: Print my name
-        run: echo "${NAME} $EMAIL $REPO"
+        run: echo "$NAME $EMAIL $REPO"
         
 
 
@@ -64,19 +64,19 @@ jobs:
                     "fields": [
                       {
                         "type": "mrkdwn",
-                        "text": "*Name:* Test"
+                        "text": "*Name:* ${ {NAME }}"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Email:* test"
+                        "text": "*Email:* ${ {EMAIL} }"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Matricultaion:* abc122"
+                        "text": "*Matricultaion:* ${ {MATRIC} }"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Repository:*\n <>"
+                        "text": "*Repository:*\n <${ {REPO} }>""
                       }
                     ]
                   },
