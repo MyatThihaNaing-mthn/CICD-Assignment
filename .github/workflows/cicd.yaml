@@ -64,19 +64,19 @@ jobs:
                     "fields": [
                       {
                         "type": "mrkdwn",
-                        "text": "*Name:* ${ {NAME }}"
+                        "text": "*Name:* ${{env.NAME}}"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Email:* ${ {EMAIL} }"
+                        "text": "*Email:* ${{env.EMAIL}}"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Matricultaion:* ${ {MATRIC} }"
+                        "text": "*Matricultaion:* ${{env.MATRIC}}"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Repository:*\n <test>""
+                        "text": "*Repository:*\n <${{env.REPO}}>""
                       }
                     ]
                   },
