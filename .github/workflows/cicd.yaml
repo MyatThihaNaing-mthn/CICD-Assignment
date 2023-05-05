@@ -45,8 +45,8 @@ jobs:
       
       - name: Send message to slack
         run: | 
-          curl -X POST $env.SLACK_WEBHOOK_URL \
-            -d {"test" : "test"}
+          curl -X POST $env.SLACK_WEBHOOK_URL 
+            -d '{"test" : "test"}'
 
 
         
