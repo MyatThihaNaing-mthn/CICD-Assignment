@@ -22,7 +22,7 @@ jobs:
     
 
       - name: Print my name
-        run: echo "$NAME $EMAIL $REPO"
+        run: echo "${NAME} $EMAIL $REPO"
         
 
 
@@ -76,7 +76,7 @@ jobs:
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Repository:*\n <https://www.google.com>"
+                        "text": "*Repository:*\n <>"
                       }
                     ]
                   },
