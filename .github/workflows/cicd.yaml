@@ -8,7 +8,7 @@ on:
 env:
   NAME: MYAT THIHA NAING
   EMAIL: e112943@u.nus.edu
-  REPO: git@github.com:MyatThihaNaing-mthn/CICD-Assignment.git
+  REPO: https://github.com/MyatThihaNaing-mthn/CICD-Assignment.git
   MATRIC: A0269560W
   APP_URL: https://snotty-rhythm-production.up.railway.app/
 
